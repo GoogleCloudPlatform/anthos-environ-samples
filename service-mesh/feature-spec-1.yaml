@@ -1,0 +1,7 @@
+apiVersion: anthos.cloud.google.com/v1alpha1
+kind: ServiceMeshFeatureSpec
+metadata:
+  name: service-mesh-spec-1
+  namespace: anthos-system
+spec:
+  version: 1.6.5

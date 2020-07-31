@@ -1,0 +1,13 @@
+apiVersion: anthos.cloud.google.com/v1alpha1
+kind: CloudRunBinding
+metadata:
+  name: cloudrun-binding
+  namespace: anthos-system
+spec:
+  configs:
+  - configRef:
+      name: cloudrun-spec-1
+      namespace: anthos-system
+    placement:
+      clusters:
+      - membership: "gke-cluster-1"

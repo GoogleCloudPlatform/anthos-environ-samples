@@ -1,0 +1,6 @@
+apiVersion: anthos.cloud.google.com/v1alpha1
+kind: CloudRunFeatureSpec
+metadata:
+  name: cloudrun-spec-1
+  namespace: anthos-system
+spec: {}

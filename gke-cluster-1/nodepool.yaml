@@ -1,0 +1,20 @@
+# See https://cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool for all the available options.
+apiVersion: container.cnrm.cloud.google.com/v1beta1 # See https://cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool for all the available options.
+kind: ContainerNodePool
+metadata:
+  name: "gke-nodepool-1" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.nodepool.name"}
+  namespace: anthos-system
+  annotations:
+    cnrm.cloud.google.com/project-id: "PROJECT_ID" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.core.project"}
+spec:
+  location: us-central1-c # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.location"}
+  initialNodeCount: 2
+  autoscaling:
+    minNodeCount: 2
+    maxNodeCount: 4
+  nodeConfig:
+    machineType: e2-standard-4
+    workloadMetadataConfig:
+      nodeMetadata: GKE_METADATA_SERVER
+  clusterRef:
+    name: "gke-cluster-1" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.name"}

@@ -1,0 +1,26 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: Anthos Self Service / GKE Cluster
+openAPI:
+  definitions:
+
+# GKE Cluster
+    io.k8s.cli.setters.gcloud.container.cluster.name:
+      type: string
+      x-k8s-cli:
+        setter:
+          name: gcloud.container.cluster.name
+          value: gke-cluster-1
+    io.k8s.cli.setters.gcloud.container.cluster.location:
+      type: string
+      x-k8s-cli:
+        setter:
+          name: gcloud.container.cluster.location
+          value: us-central1-c
+    io.k8s.cli.setters.gcloud.container.nodepool.name:
+      type: string
+      x-k8s-cli:
+        setter:
+          name: gcloud.container.nodepool.name
+          value: "gke-nodepool-1"

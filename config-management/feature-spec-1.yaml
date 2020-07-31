@@ -1,0 +1,16 @@
+apiVersion: anthos.cloud.google.com/v1alpha1
+kind: ConfigManagementFeatureSpec
+metadata:
+  name: config-management-spec-1
+  namespace: anthos-system
+spec:
+  # Skipped `clusterName` on purpose: will be filled by ConfigManagementBinding.
+  # The Secret used to access the config-management repo.
+  secretRef:
+    name: git-creds
+    namespace: anthos-system
+  git:
+    syncRepo: "" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.configmanagement.git.syncrepo"}
+    syncBranch: master
+    secretType: ssh
+    policyDir: "/"

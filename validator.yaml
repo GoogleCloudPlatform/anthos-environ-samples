@@ -1,0 +1,10 @@
+apiVersion: anthos.cloud.google.com/v1alpha1
+kind: Validator
+metadata:
+  name: validator
+  namespace: anthos-system
+  annotations:
+    configmanagement.gke.io/managed: disabled
+    config.kubernetes.io/function: |
+      container:
+        image: gcr.io/anthos-sse-dev/validator:v0.1
