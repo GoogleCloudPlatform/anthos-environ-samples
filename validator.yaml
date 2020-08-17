@@ -1,0 +1,8 @@
+apiVersion: anthos.cloud.google.com/v1alpha1
+kind: Validator
+metadata:
+  name: validator
+  annotations:
+    config.kubernetes.io/function: |
+      container:
+        image: gcr.io/admin-service-cluster-release/validator:0.0.22-louhi-testing
