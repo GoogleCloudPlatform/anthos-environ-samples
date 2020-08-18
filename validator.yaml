@@ -4,6 +4,7 @@ metadata:
   name: validator
   namespace: anthos-system
   annotations:
+    configmanagement.gke.io/managed: disabled
     config.kubernetes.io/function: |
       container:
         image: gcr.io/admin-service-cluster-release/validator:0.0.22-louhi-testing
