@@ -1,6 +1,6 @@
 apiVersion: kpt.dev/v1alpha1
 kind: Kptfile
 metadata:
-  name: Anthos Self Service for Service Mesh
+  name: Anthos sample package for Anthos Service Mesh
 openAPI:
   definitions:

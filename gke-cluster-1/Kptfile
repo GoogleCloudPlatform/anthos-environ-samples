@@ -1,7 +1,7 @@
 apiVersion: kpt.dev/v1alpha1
 kind: Kptfile
 metadata:
-  name: Anthos Self Service / GKE Cluster
+  name: Anthos sample package for GKE Cluster
 openAPI:
   definitions:
 

@@ -1,7 +1,7 @@
 apiVersion: kpt.dev/v1alpha1
 kind: Kptfile
 metadata:
-  name: Anthos Self Service for Config Management
+  name: Anthos sample package for Anthos Config Management
 openAPI:
   definitions:
     io.k8s.cli.setters.anthos.configmanagement.git.syncrepo:

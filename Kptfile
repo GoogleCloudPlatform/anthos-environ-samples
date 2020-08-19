@@ -1,7 +1,41 @@
 apiVersion: kpt.dev/v1alpha1
 kind: Kptfile
 metadata:
-  name: Anthos Self Service
+  name: Anthos environ sample package
+packageMetadata:
+  title: Anthos environ sample package
+  flavor: krm
+  url: https://github.com/GoogleCloudPlatform/anthos-environ-samples
+  version: 0.1.0
+  shortDescription: Anthos environ sample package to create GKE clusters on any anthos platform, and manage the lifecycle of Anthos components on those clusters.
+  tags:
+    - anthos
+    - gke
+    - kubernetes
+  license: Apache
+  permissions:
+    - compute.instances.create
+    - compute.instances.delete
+    - compute.instances.list
+    - compute.instanceGroupManagers.get
+    - iam.serviceAccounts.actAs
+    - serviceusage.services.get
+    - serviceusage.services.list
+    - serviceusage.services.use
+    - serviceusage.services.enable
+    - resourcemanager.projects.getIamPolicy
+    - resourcemanager.projects.setIamPolicy
+    - meshconfig.projects.init
+  details: >
+     As of the first release, the Anthos environ sample package can help with the following:
+       Create GKE clusters (add more clusters as clone the sub-package)
+       Register the cluster to GKE Hub
+       Manage lifecycle of Anthos Config Management
+       Manage lifecycle of Anthos Service Mesh
+       Manage lifecycle of Cloud Run
+
+     The Anthos environ sample package rely on the Anthos Admin Service cluster to provide the above functionality.
+
 openAPI:
   definitions:
 
