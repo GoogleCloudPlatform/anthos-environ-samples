@@ -10,3 +10,10 @@ openAPI:
         setter:
           name: anthos.configmanagement.git.syncrepo
           value: ""
+    io.k8s.cli.setters.memberships:
+      type: array
+      x-k8s-cli:
+        setter:
+          name: memberships
+          listValues:
+          - "gke-cluster-1"
