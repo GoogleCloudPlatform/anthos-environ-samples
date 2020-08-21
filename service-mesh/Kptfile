@@ -4,3 +4,10 @@ metadata:
   name: Anthos sample package for Anthos Service Mesh
 openAPI:
   definitions:
+    io.k8s.cli.setters.memberships:
+      type: array
+      x-k8s-cli:
+        setter:
+          name: memberships
+          listValues:
+          - "gke-cluster-1"

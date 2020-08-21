@@ -22,5 +22,5 @@ spec:
       name: config-management-spec-1
       namespace: anthos-system
     placement:
-      clusters:
-      - membership: "gke-cluster-1"
+      memberships: # {"$kpt-set":"memberships"}
+      - "gke-cluster-1"
