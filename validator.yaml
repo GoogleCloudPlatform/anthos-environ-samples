@@ -7,4 +7,4 @@ metadata:
     configmanagement.gke.io/managed: disabled
     config.kubernetes.io/function: |
       container:
-        image: gcr.io/admin-service-cluster-release/validator:0.0.22-louhi-testing
+        image: gcr.io/admin-service-cluster-release/validator:0.1.0-rc3
