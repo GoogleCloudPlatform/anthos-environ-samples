@@ -4,8 +4,7 @@ metadata:
   name: Anthos sample package for GKE Cluster
 openAPI:
   definitions:
-
-# GKE Cluster
+    # GKE Cluster
     io.k8s.cli.setters.gcloud.container.cluster.name:
       type: string
       x-k8s-cli:
@@ -24,3 +23,32 @@ openAPI:
         setter:
           name: gcloud.container.nodepool.name
           value: "gke-nodepool-1"
+    # Project Settings
+    io.k8s.cli.setters.gcloud.core.project:
+      type: string
+      x-k8s-cli:
+        setter:
+          name: gcloud.core.project
+          value: PROJECT_ID
+    io.k8s.cli.setters.gcloud.project.projectNumber:
+      type: string
+      x-k8s-cli:
+        setter:
+          name: gcloud.project.projectNumber
+          value: PROJECT_NUMBER
+    io.k8s.cli.substitutions.identity-namespace:
+      x-k8s-cli:
+        substitution:
+          name: identity-namespace
+          pattern: ${gcloud.core.project}.svc.id.goog
+          values:
+          - marker: ${gcloud.core.project}
+            ref: '#/definitions/io.k8s.cli.setters.gcloud.core.project'
+    io.k8s.cli.substitutions.mesh-id:
+      x-k8s-cli:
+        substitution:
+          name: mesh-id
+          pattern: proj-${gcloud.project.projectNumber}
+          values:
+          - marker: ${gcloud.project.projectNumber}
+            ref: '#/definitions/io.k8s.cli.setters.gcloud.project.projectNumber'
