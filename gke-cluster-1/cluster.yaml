@@ -17,9 +17,9 @@ metadata:
   name: "gke-cluster-1" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.name"}
   namespace: anthos-system
   labels:
-    mesh_id: "proj-PROJECT_NUMBER" # {"$ref":"#/definitions/io.k8s.cli.substitutions.mesh-id"}
+    mesh_id: "proj-PROJECT_NUMBER" # {"$kpt-set":"mesh-id"}
   annotations:
-    cnrm.cloud.google.com/project-id: "PROJECT_ID" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.core.project"}
+    cnrm.cloud.google.com/project-id: "PROJECT_ID" # {"$kpt-set":"gcloud.core.project"}
     # Using dedicated ContainerNodePool, so the default one is not needed
     cnrm.cloud.google.com/remove-default-node-pool: "true"
 spec:
@@ -30,4 +30,4 @@ spec:
   releaseChannel:
     channel: REGULAR
   workloadIdentityConfig:
-    identityNamespace: "PROJECT_ID.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.substitutions.identity-namespace"}
+    identityNamespace: "PROJECT_ID.svc.id.goog" # {"$kpt-set":"identity-namespace"}
