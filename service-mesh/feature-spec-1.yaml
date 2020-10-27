@@ -17,4 +17,4 @@ metadata:
   name: service-mesh-spec-1
   namespace: anthos-system
 spec:
-  version: 1.6.5
+  version: 1.6.11
