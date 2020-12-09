@@ -20,10 +20,10 @@ spec:
   # Skipped `clusterName` on purpose: will be filled by ConfigManagementBinding.
   # The Secret used to access the config-management repo.
   secretRef:
-    name: git-creds
-    namespace: anthos-system
+    name: git-creds # {"$kpt-set":"anthos.configmanagement.secretref.name"}
+    namespace: anthos-system # {"$kpt-set":"anthos.configmanagement.secretref.namespace"}
   git:
-    syncRepo: "" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.configmanagement.git.syncrepo"}
-    syncBranch: master
-    secretType: ssh
-    policyDir: "/"
+    syncRepo: "" # {"$kpt-set":"anthos.configmanagement.git.syncrepo"}
+    syncBranch: master # {"$kpt-set":"anthos.configmanagement.git.syncbranch"}
+    secretType: ssh # {"$kpt-set":"anthos.configmanagement.git.secrettype"}
+    policyDir: "/" # {"$kpt-set":"anthos.configmanagement.git.policydir"}

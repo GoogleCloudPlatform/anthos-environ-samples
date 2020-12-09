@@ -14,7 +14,7 @@
 apiVersion: container.cnrm.cloud.google.com/v1beta1 # See https://cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster for all the available options.
 kind: ContainerCluster
 metadata:
-  name: "gke-cluster-1" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.name"}
+  name: "gke-cluster-1" # {"$kpt-set":"gcloud.container.cluster.name"}
   namespace: anthos-system
   labels:
     mesh_id: "proj-PROJECT_NUMBER" # {"$kpt-set":"mesh-id"}
@@ -23,7 +23,7 @@ metadata:
     # Using dedicated ContainerNodePool, so the default one is not needed
     cnrm.cloud.google.com/remove-default-node-pool: "true"
 spec:
-  location: us-central1-c # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.location"}
+  location: us-central1-c # {"$kpt-set":"gcloud.container.cluster.location"}
   initialNodeCount: 1
   loggingService: logging.googleapis.com/kubernetes
   monitoringService: monitoring.googleapis.com/kubernetes
