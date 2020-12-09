@@ -14,11 +14,11 @@
 apiVersion: anthos.cloud.google.com/v1alpha1
 kind: HubMembership
 metadata:
-  name: gke-cluster-1 # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.name"}
+  name: gke-cluster-1 # {"$kpt-set":"gcloud.container.cluster.name"}
   namespace: anthos-system
 spec:
   clusterRef:
     apiGroup: "container.cnrm.cloud.google.com"
     kind: ContainerCluster
     namespace: anthos-system
-    name: gke-cluster-1 # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.name"}
+    name: gke-cluster-1 # {"$kpt-set":"gcloud.container.cluster.name"}

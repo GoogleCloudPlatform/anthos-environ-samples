@@ -14,12 +14,12 @@
 apiVersion: container.cnrm.cloud.google.com/v1beta1 # See https://cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool for all the available options.
 kind: ContainerNodePool
 metadata:
-  name: "gke-nodepool-1" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.nodepool.name"}
+  name: "gke-nodepool-1" # {"$kpt-set":"gcloud.container.nodepool.name"}
   namespace: anthos-system
   annotations:
     cnrm.cloud.google.com/project-id: "PROJECT_ID" # {"$kpt-set":"gcloud.core.project"}
 spec:
-  location: us-central1-c # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.location"}
+  location: us-central1-c # {"$kpt-set":"gcloud.container.cluster.location"}
   initialNodeCount: 2
   autoscaling:
     minNodeCount: 2
@@ -36,4 +36,4 @@ spec:
     - https://www.googleapis.com/auth/servicecontrol
     - https://www.googleapis.com/auth/trace.append
   clusterRef:
-    name: "gke-cluster-1" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.container.cluster.name"}
+    name: "gke-cluster-1" # {"$kpt-set":"gcloud.container.cluster.name"}

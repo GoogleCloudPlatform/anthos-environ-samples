@@ -17,3 +17,28 @@ openAPI:
           name: memberships
           listValues:
           - "gke-cluster-1"
+    io.k8s.cli.setters.anthos.configmanagement.git.syncbranch:
+      x-k8s-cli:
+        setter:
+          name: anthos.configmanagement.git.syncbranch
+          value: master
+    io.k8s.cli.setters.anthos.configmanagement.git.secrettype:
+      x-k8s-cli:
+        setter:
+          name: anthos.configmanagement.git.secrettype
+          value: ssh
+    io.k8s.cli.setters.anthos.configmanagement.secretref.name:
+      x-k8s-cli:
+        setter:
+          name: anthos.configmanagement.secretref.name
+          value: git-creds
+    io.k8s.cli.setters.anthos.configmanagement.secretref.namespace:
+      x-k8s-cli:
+        setter:
+          name: anthos.configmanagement.secretref.namespace
+          value: anthos-system
+    io.k8s.cli.setters.anthos.configmanagement.git.policydir:
+      x-k8s-cli:
+        setter:
+          name: anthos.configmanagement.git.policydir
+          value: /
