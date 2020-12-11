@@ -26,4 +26,4 @@ spec:
     syncRepo: "" # {"$kpt-set":"anthos.configmanagement.git.syncrepo"}
     syncBranch: master # {"$kpt-set":"anthos.configmanagement.git.syncbranch"}
     secretType: ssh # {"$kpt-set":"anthos.configmanagement.git.secrettype"}
-    policyDir: "/" # {"$kpt-set":"anthos.configmanagement.git.policydir"}
+    policyDir: "." # {"$kpt-set":"anthos.configmanagement.git.policydir"}
